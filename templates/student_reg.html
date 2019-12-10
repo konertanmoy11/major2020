@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<script type="text/javascript" src="{{ url_for('static', filename = 'validate.js') }}"></script>
+<head>
+  <title>Student Exam Registration</title>
+</head>
+<body>
+    <center><h1>Student Registration Portal</h1></center>
+    <center>
+      <form name="stu_reg" onsubmit="return validate()" action="http://localhost:5000/student/s_register" method="post">
+          Name: <input type="text" name="name" required/><br>
+          DOB: <input type="date" name="dob" required/><br>
+          Father's Name: <input type="text" name="fname" required/><br>
+          Password: <input type="password" name="pwd" id="pwd" required/><br>
+          Confirm Password: <input type="password" name="cpwd" id="cpwd" required/><br>
+          Gender: <input type="radio" name="gender" value="Male" checked>Male
+          <input type="radio" name="gender" value="Female">Female<br>
+          Select Govt ID: <select name="govtid" required>
+            <option disabled selected value> -- select an option -- </option>
+            <option value="aadhar">Aadhar Card</option>
+            <option value="passport">Passport</option>
+            <option value="dl">Driving License</option>
+          </select> <br>
+          Unique ID number: <input type="text" name="uidno" required/><br>
+          Phone number: <input type="text" name="phone" required/><br>
+          Email: <input type="email" name="email" required/><br>
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+      </form>
+</body>
+</html>
